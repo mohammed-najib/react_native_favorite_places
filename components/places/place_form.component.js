@@ -25,28 +25,26 @@ const PlaceForm = ({ onCreatePlace }) => {
   });
 
   const savePlaceHandler = () => {
-    const placeData = new Place(
-      enteredTitle,
-      selectedImage,
-      pickedLocation,
-    )
+    const placeData = new Place(enteredTitle, selectedImage, pickedLocation);
 
-    onCreatePlace(placeData)
+    onCreatePlace(placeData);
   };
 
   return (
     <ScrollView style={styles.form}>
-      <View>
-        <Text style={styles.label}>Title</Text>
-        <TextInput
-          style={styles.input}
-          onChangeText={changeTitleHandler}
-          value={enteredTitle}
-        />
+      <View style={styles.innerForm}>
+        <View>
+          <Text style={styles.label}>Title</Text>
+          <TextInput
+            style={styles.input}
+            onChangeText={changeTitleHandler}
+            value={enteredTitle}
+          />
+        </View>
+        <ImagePicker onImageTaken={imageTakenHandler} />
+        <LocationPicker onLocationPicked={locationPickedHandler} />
+        <Button onPress={savePlaceHandler}>Add Place</Button>
       </View>
-      <ImagePicker onImageTaken={imageTakenHandler} />
-      <LocationPicker onLocationPicked={locationPickedHandler} />
-      <Button onPress={savePlaceHandler}>Add Place</Button>
     </ScrollView>
   );
 };
@@ -56,6 +54,8 @@ export default PlaceForm;
 const styles = StyleSheet.create({
   form: {
     flex: 1,
+  },
+  innerForm: {
     padding: 24,
   },
   label: {
