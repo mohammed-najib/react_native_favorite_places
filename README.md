@@ -11,6 +11,7 @@ An app project for a favorite places app using react-native framework
     <img src="./assets/readme/screenshot_4.png" alt="screenshot 1" width="200" />
     <img src="./assets/readme/screenshot_5.png" alt="screenshot 1" width="200" />
     <img src="./assets/readme/screenshot_6.png" alt="screenshot 1" width="200" />
+    <img src="./assets/readme/screenshot_7.png" alt="screenshot 1" width="200" />
 </div>
 
 ## Environment Variables
